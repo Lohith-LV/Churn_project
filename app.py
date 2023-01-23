@@ -73,11 +73,7 @@ def main():
                                 multiple_lines,internet_serv,online_secu,online_backup,
                                 dev_protection,tech_supp,streaming_tv,streaming_mov,
                                 contract,paperless_billing,payment_method,monthly_charges,total_charges,tenure], ndmin=2)
-        df = pd.DataFrame(input_array,columns=['gender','SeniorCitizen', 'Partner', 'Dependents','PhoneService',
-                                               'MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup',
-                                               'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies',
-                                               'Contract', 'PaperlessBilling', 'PaymentMethod', 'Churn',
-                                               'MonthlyCharges', 'TotalCharges', 'tenure'])
+        df = pd.DataFrame(input_array,columns=['gender','SeniorCitizen', 'Partner', 'Dependents','PhoneService','MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup','DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies','Contract', 'PaperlessBilling', 'PaymentMethod', 'Churn','MonthlyCharges', 'TotalCharges', 'tenure'])
     
         for column in df.columns:
             if df[column].dtype == np.number:
