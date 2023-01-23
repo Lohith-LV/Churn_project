@@ -74,13 +74,15 @@ def main():
                                 dev_protection,tech_supp,streaming_tv,streaming_mov,
                                 contract,paperless_billing,payment_method,monthly_charges,total_charges,tenure], ndmin=2)
         #df = pd.DataFrame(input_array,columns=['gender','SeniorCitizen', 'Partner', 'Dependents','PhoneService','MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup','DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies','Contract', 'PaperlessBilling', 'PaymentMethod', 'MonthlyCharges', 'TotalCharges', 'tenure'])
-        df = pd.DataFrame({'gender':[gender],'SeniorCitizen':[sen_citizen],'Partner':[partner],'Dependents':[dependants],'PhoneService':[phone_serv],'MultipleLines':[multiple_lines],'InternetService':[internet_serv],'OnlineSecurity':[online_secu],'OnlineBackup':[online_backup],'DeviceProtection':[dev_protection],'TechSupport':[tech_supp], 'StreamingTV':[streaming_tv],'StreamingMovies':[streaming_mov],'Contract' :[contract], 'PaperlessBilling':[paperless_billing],'PaymentMethod':[payment_method],'MonthlyCharges' :[monthly_charges],'TotalCharges':[total_charges],'tenure':[tenure]})
+        df = pd.DataFrame({'gender':[str(gender)],'SeniorCitizen':[sen_citizen],'Partner':[partner],'Dependents':[dependants],'PhoneService':[phone_serv],'MultipleLines':[multiple_lines],'InternetService':[internet_serv],'OnlineSecurity':[online_secu],'OnlineBackup':[online_backup],'DeviceProtection':[dev_protection],'TechSupport':[tech_supp], 'StreamingTV':[streaming_tv],'StreamingMovies':[streaming_mov],'Contract' :[contract], 'PaperlessBilling':[paperless_billing],'PaymentMethod':[payment_method],'MonthlyCharges' :[monthly_charges],'TotalCharges':[total_charges],'tenure':[tenure]})
         for column in df.columns:
             st.write(column)
-            if df[column].dtype == np.number:
-                continue
-            st.write(column)
-            df[column] = label_enc.transform(df[column])
+            #if df[column].dtype == np.number:
+            #    continue
+            if df[column].dtype == np.object:
+                st.write(column)
+                df[column] = label_enc.transform(df[column])
+            #df[column] = label_enc.transform(df[column])
         
         scal_df = stand_scal.transform(df)
         
