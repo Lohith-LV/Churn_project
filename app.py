@@ -73,8 +73,8 @@ def main():
                                 multiple_lines,internet_serv,online_secu,online_backup,
                                 dev_protection,tech_supp,streaming_tv,streaming_mov,
                                 contract,paperless_billing,payment_method,monthly_charges,total_charges,tenure], ndmin=2)
-        df = pd.DataFrame(input_array,columns=['gender','SeniorCitizen', 'Partner', 'Dependents','PhoneService','MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup','DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies','Contract', 'PaperlessBilling', 'PaymentMethod', 'Churn','MonthlyCharges', 'TotalCharges', 'tenure'])
-    
+        df = pd.DataFrame(input_array,columns=['gender','SeniorCitizen', 'Partner', 'Dependents','PhoneService','MultipleLines', 'InternetService', 'OnlineSecurity', 'OnlineBackup','DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies','Contract', 'PaperlessBilling', 'PaymentMethod', 'MonthlyCharges', 'TotalCharges', 'tenure'])
+       # df = pd.DataFame({'gender':gender,'SeniorCitizen':sen_citizen,'Partner':partner,'Dependents':dependants,'PhoneService':phone_serv,'MultipleLines':multiple_lines,'InternetService':internet_serv,'OnlineSecurity':online_secu,'OnlineBackup':online_backup,'DeviceProtection':dev_protection,'TechSupport':tech_supp, 'StreamingTV':streaming_tv,'StreamingMovies':streaming_mov,'Contract' :contract, 'PaperlessBilling':paperless_billing,'PaymentMethod':payment_method,'MonthlyCharges' :monthly_charges,'TotalCharges':total_charges,'tenure':tenure})
         for column in df.columns:
             if df[column].dtype == np.number:
                 continue
